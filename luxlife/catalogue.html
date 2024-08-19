@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Three Containers with Hover Effect</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      display: flex;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      /* Remove overflow: hidden to allow scrolling */
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 700px;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease;
+    }
+
+    .options {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s;
+    }
+
+    .container:hover .image {
+      opacity: 50%;
+    }
+
+    .container:hover .options {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 20px;
+      position: relative;
+      overflow: hidden;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .circle:hover {
+      transform: scale(1.1);
+    }
+
+    .label {
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .circle:hover .label {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="#">LuxLife</a>
+          
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">LuxLife</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">catalogue</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">About us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="login-button">Login</a>
+          <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+  <div class="container">
+    <img src="https://via.placeholder.com/1920x1080" alt="Hover to see options" class="image">
+    <div class="options">
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 1">
+        <div class="label">Option 1</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 2">
+        <div class="label">Option 2</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 3">
+        <div class="label">Option 3</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 4">
+        <div class="label">Option 4</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <img src="https://via.placeholder.com/1920x1080" alt="Hover to see options" class="image">
+    <div class="options">
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 1">
+        <div class="label">Option 1</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 2">
+        <div class="label">Option 2</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 3">
+        <div class="label">Option 3</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 4">
+        <div class="label">Option 4</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <img src="img.jpg" alt="Hover to see options" class="image">
+    <div class="options">
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 1">
+        <div class="label">Option 1</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 2">
+        <div class="label">Option 2</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 3">
+        <div class="label">Option 3</div>
+      </div>
+      <div class="circle">
+        <img src="https://via.placeholder.com/100" alt="Option 4">
+        <div class="label">Option 4</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
