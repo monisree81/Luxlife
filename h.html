@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+</head>
+<body>
+    <div class="product" data-id="1" data-name="Product 1" data-price="20.00">
+        <h2>Product 1</h2>
+        <p>$20.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="product" data-id="2" data-name="Product 2" data-price="30.00">
+        <h2>Product 2</h2>
+        <p>$30.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.add-to-cart');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const productElement = event.target.closest('.product');
+            const id = productElement.getAttribute('data-id');
+            const name = productElement.getAttribute('data-name');
+            const price = productElement.getAttribute('data-price');
+
+            const product = {
+                id,
+                name,
+                price
+            };
+
+            // Retrieve existing cart items from local storage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the new product to the cart
+            cart.push(product);
+
+            // Save the updated cart back to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert('Product added to cart!');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
