@@ -21,6 +21,33 @@ body{
     transition: 0.3s color;
 
 }
+.hero-section h1{
+    margin-top:400px;
+    color: rgb(255, 251, 247);
+}
+
+
+.home-btn{
+    background-color:#e2c799;
+    color:#7A3E26;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: solid 1.5px #7A3E26;
+    text-decoration: none;
+    transition: 0.3s background-color;
+    margin-top: 10px;
+}
+.home-btn:hover{
+    background-color: #c08261;
+    color: rgb(255, 251, 247);
+}
+.logo{
+    height:50px;
+    width: 150px;
+    margin-left: -15px;
+}
+
 
 .login-button {
     background-color: #c08261;
@@ -527,5 +554,10 @@ carousel-overlay h2{
     font-style: oblique;
 }
 .carousel-overlay p{
-font-style: inherit
+font-style:italic
+}
+
+.row{
+    border-bottom: dashed 1px #7A3E26 ;
+    padding: 10px;
 }
