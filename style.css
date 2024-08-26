@@ -522,3 +522,10 @@ h6.card-title {
     border-width: 2px;
     border-color: #F7E7CE;
 }
+carousel-overlay h2{
+
+    font-style: oblique;
+}
+.carousel-overlay p{
+font-style: inherit
+}
